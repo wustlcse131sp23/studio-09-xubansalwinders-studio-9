@@ -1,6 +1,7 @@
 package studio9;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,9 +29,20 @@ public class WordCount {
 	 *         associated with the number of occurrences of the word
 	 */
 	public static Map<String, Integer> countWords(List<String> words) {
-
-		// FIXME
-		throw new NotYetImplementedException();
-
+		//countWords(words);
+		//List <String> temp =  new LinkedList<>();
+		Map <String, Integer> temp = new HashMap<>();
+		for (String word: words) {
+			int length = temp.getOrDefault(word, -1);
+			if (length == -1) {
+				temp.put(word, 1);
+			} else {
+				temp.replace(word, length + 1);
+			}
 	}
+		//System.out.println(temp.get());
+		return temp;
+		
+}
+	
 }
